@@ -24,6 +24,7 @@ builder.Services.AddScoped<IManagerService, ManagerService>();
 builder.Services.AddDbContext<DataContext>();
 
 var app = builder.Build();
+var serviceProvider = app.Services;
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

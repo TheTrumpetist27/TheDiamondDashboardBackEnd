@@ -7,6 +7,7 @@
         {
             _context = context;
         }
+
         public async Task<List<Manager>> AddManager(Manager manager)
         {
             _context.manager.Add(manager);

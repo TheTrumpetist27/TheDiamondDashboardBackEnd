@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TheDiamondDashboardBackEnd.InterfaceFactory;
 using TheDiamondDashboardBackEnd.Services.ManagerService;
 
 namespace TheDiamondDashboardBackEnd.Controllers
@@ -9,9 +10,9 @@ namespace TheDiamondDashboardBackEnd.Controllers
     public class ManagerController : ControllerBase
     {
         private readonly IManagerService _managerService;
-        public ManagerController(IManagerService managerService)
+        public ManagerController()
         {
-            _managerService = managerService;
+            _managerService = InterfaceCollection.GetIManagerService();
         }
 
         [HttpGet]
