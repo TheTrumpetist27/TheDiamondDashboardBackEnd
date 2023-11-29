@@ -10,19 +10,19 @@ namespace TheDiamondDashboardBackEnd.Data
             
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            base.OnConfiguring(optionsBuilder);
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    base.OnConfiguring(optionsBuilder);
 
-            IConfiguration configuration = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json")
-            .Build();
+        //    IConfiguration configuration = new ConfigurationBuilder()
+        //    .SetBasePath(Directory.GetCurrentDirectory())
+        //    .AddJsonFile("appsettings.json")
+        //    .Build();
 
-            string? connectionString = configuration.GetConnectionString("DefaultConnection");
+        //    string? connectionString = configuration.GetConnectionString("DefaultConnection");
 
-            optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
-        }
+        //    optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+        //}
 
         public DbSet<Manager> manager { get; set; }
     }
